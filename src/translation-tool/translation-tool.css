@@ -3,7 +3,15 @@
     position: absolute;
     top: 25%;
     display: flex;
-    animation: rightMove 1s linear forwards;
+    /* animation: rightMove 1s linear forwards; */
+}
+
+.containerAnimation{
+  right: 0;
+  position: absolute;
+  top: 25%;
+  display: flex;
+  animation: rightMove 1s linear forwards;
 }
 
 .containerBoxRtl{

@@ -5,7 +5,7 @@ export const HideShowContext = createContext({ isShow: false, isRtl: false })
 
 export default function HideShowContextProvider({ children, isHideShow, isRightToLeft }) {
     const [isShow, setShow] = useState(false);
-    const [isRtl, setIsRtl] = useState(false);
+    const [isRtl, setIsRtl] = useState(null);
     const isMount = useIsMount();
 
     useEffect(() => {

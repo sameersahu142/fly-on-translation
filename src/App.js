@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import TranslationTool from './translation-tool/translation-tool';
 import HideShowContextProvider, { useHideShowContext } from './components/context/hideShowContext';
 import { useState } from 'react';
+import TranslationContent from './components/translation-content';
 
 function App() {
   const { isShow, isRtl } = useHideShowContext();

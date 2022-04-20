@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useHideShowContext } from '../components/context/hideShowContext';
 import FloatingBox from '../components/floating-box';
+import { useIsMount } from '../components/hooks/useMount';
 import SideSheet from '../components/side-sheet';
 import './translation-tool.css';
 
 const TranslationTool = ({ handelClose, handelRtlController }) => {
   const translationTool = useRef(null)
   const { isRtl } = useHideShowContext();
-  const [leftPosition, setLeftPosition] = useState(`calc(100` % ` - 100px)`)
+  const [leftPosition, setLeftPosition] = useState(`calc(100` % ` - 100px)`);
+  const isMount = useIsMount();
   const dragElement = (evn) => {
     let pos2 = 0, pos3 = 0, pos4 = 0;
     if (document.getElementById(evn.id + "Controller")) {
@@ -60,11 +62,25 @@ const TranslationTool = ({ handelClose, handelRtlController }) => {
     } else {
       setLeftPosition(`calc(100` % ` - 100px)`)
     }
+  }, [isRtl, translationTool])
+
+  useEffect(() => {
+    if (!isMount) {
+      if (isRtl) {
+        translationTool.current.classList.remove('containerBox');
+        translationTool.current.classList.remove('containerAnimation');
+        translationTool.current.classList.add('containerBoxRtl');
+      } else if(!isRtl) {
+        translationTool.current.classList.remove('containerBox');
+        translationTool.current.classList.remove('containerBoxRtl');
+        translationTool.current.classList.add('containerAnimation');
+      }
+    }
   }, [isRtl])
 
   return (
     <>
-      <div className={isRtl ? 'containerBoxRtl' : 'containerBox'} ref={translationTool} id="floating" >
+      <div className={'containerBox'} ref={translationTool} id="floating" >
         <FloatingBox handelClose={handelClose} handelRtlController={handelRtlController} />
         <SideSheet handelClose={handelClose} />
       </div>
