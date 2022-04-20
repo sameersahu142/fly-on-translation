@@ -1,0 +1,39 @@
+.sideSheetContainer{
+    width: 350px;
+    height: 330px;
+    background: white;
+    box-shadow: 1px 1px 6px 3px #e4e4e4c9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+}
+.hideSideSheetContainer{
+    display: none;
+}
+.headingController{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    height: 10%;
+}
+.selectLanguageContainer{
+    display: flex;
+    align-items: center;
+    height: 10%;
+}
+.translateTextContainer{
+    height: 71%;
+    border: 1px solid #ddd;
+    margin: 2%;
+    border-radius: 10px;
+    text-align: initial;
+    font-size: 14px;
+    color: #4a5568;
+    padding: 0px 5px;
+}
+.heading{
+    font-size: 18px;
+    font-weight: 700;
+}

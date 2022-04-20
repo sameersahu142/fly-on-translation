@@ -1,0 +1,87 @@
+.floatingBoxContainer{
+    width: 80px;
+    height: 80px;
+    background: white;
+    /* border: #b7b7b7 1px solid; */
+    box-shadow: -2px -2px 4px 2px rgb(0 0 0 / 10%), 0px 3px 4px rgb(0 0 0 / 20%);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.floatingBoxContainerRtl{
+    width: 80px;
+    height: 80px;
+    background: white;
+    /* border: #b7b7b7 1px solid; */
+    box-shadow: -2px -2px 4px 2px rgb(0 0 0 / 10%), 0px 3px 4px rgb(0 0 0 / 20%);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.hrLine{
+    width: 100%;
+    border-bottom: 1px solid #cbd5e0;
+    height: 30%;
+    padding: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.hrLineRtl{
+    width: 100%;
+    border-bottom: 1px solid #cbd5e0;
+    height: 30%;
+    padding: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.textContainer{
+    cursor: pointer;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius:5px ;
+    background: #ffff;
+}
+.textContainerIsShow{
+    cursor: pointer;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius:5px ;
+    background: #edf2f7;
+}
+.textContainer:hover{
+    background: #edf2f7;
+}
+.languageIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.translation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.dropFloatBoxContainer{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background: white;
+    box-shadow: 1px 1px 6px 3px #e4e4e4c9;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    left: 0;
+    top: 45%;
+}
