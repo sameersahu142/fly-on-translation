@@ -42,5 +42,4 @@ const TranslationContent = ({ getSelectText }) => {
     </>
   );
 };
-
 export default TranslationContent;

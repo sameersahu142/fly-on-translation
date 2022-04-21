@@ -5,7 +5,7 @@ import { useIsMount } from '../components/hooks/useMount';
 import SideSheet from '../components/side-sheet';
 import './translation-tool.css';
 
-const TranslationTool = ({ handelClose, handelRtlController }) => {
+const TranslationTool = ({ handelClose, handelRtlController, handelExpand }) => {
   const translationTool = useRef(null)
   const { isRtl } = useHideShowContext();
   const [leftPosition, setLeftPosition] = useState(`calc(100` % ` - 100px)`);
@@ -62,7 +62,7 @@ const TranslationTool = ({ handelClose, handelRtlController }) => {
     } else {
       setLeftPosition(`calc(100` % ` - 100px)`)
     }
-  }, [isRtl, translationTool])
+  }, [isRtl, translationTool]);
 
   useEffect(() => {
     if (!isMount) {
@@ -81,8 +81,8 @@ const TranslationTool = ({ handelClose, handelRtlController }) => {
   return (
     <>
       <div className={'containerBox'} ref={translationTool} id="floating" >
-        <FloatingBox handelClose={handelClose} handelRtlController={handelRtlController} />
-        <SideSheet handelClose={handelClose} />
+        <FloatingBox handelClose={handelClose} handelRtlController={handelRtlController} handelExpand={handelExpand} />
+        <SideSheet handelClose={handelClose} handelExpand={handelExpand} />
       </div>
     </>
   )
