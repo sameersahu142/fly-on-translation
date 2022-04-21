@@ -4,7 +4,7 @@ import { useHideShowContext } from "./context/hideShowContext";
 import './side-sheet.css';
 import { useIsMount } from '../components/hooks/useMount';
 import SideSheetContent from "./side-sheet-content";
-// import ChatContent from "./chat-components/chat-content";
+import ChatContent from "./chat-components/chat-content";
 
 const SideSheet = ({ handelClose, handelExpand }) => {
     const sideSheet = useRef(null);
@@ -28,7 +28,7 @@ const SideSheet = ({ handelClose, handelExpand }) => {
     return (
         <div className={isShow || isChatShow ? "sideSheetContainer" : "hideSideSheetContainer"} ref={sideSheet}>
             {isShow ? <SideSheetContent handelClose={handelClose} handelExpand={handelExpand} /> : null}
-            {/* {isChatShow ? <ChatContent handelClose={handelClose} handelExpand={handelExpand} /> : null} */}
+            {isChatShow ? <ChatContent handelClose={handelClose} handelExpand={handelExpand} /> : null}
         </div>
     )
 }
