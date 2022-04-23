@@ -1,15 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useHideShowContext } from "./context/hideShowContext";
-// import useTranslation from "./localization/customHooks/translations";
+import useTranslation from "./localization/customHooks/translations";
 
 const FloatingContent = ({ handelClose,item }) => {
     const { isShow, isChatShow } = useHideShowContext();
-    // const translation = useTranslation();
+    const translation = useTranslation();
     const handelOpen = (value) => {
-        if(value.text==="Live Chat"){
+        if(value.text === translation.liveChatValue){
             handelClose(!isChatShow,value.text); 
-        }else if(value.text==="Translation"){
+        }else if(value.text === translation.translateValue){
             handelClose(!isShow,value.text);
         }
        

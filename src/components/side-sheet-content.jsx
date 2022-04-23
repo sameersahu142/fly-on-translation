@@ -5,7 +5,7 @@ import { translateYourSelectedText } from "../end-point";
 import { useHideShowContext } from "./context/hideShowContext";
 import './side-sheet.css';
 import ExpandAndCrossIcon from "./expandAndCrossIcon";
-// import useTranslation from "./localization/customHooks/translations";
+import useTranslation from "./localization/customHooks/translations";
 
 const SideSheetContent=({ handelClose, handelExpand })=>{
     const { isExpand } = useHideShowContext();
@@ -13,7 +13,7 @@ const SideSheetContent=({ handelClose, handelExpand })=>{
     const [selectLanguage, setSelectLanguage] = useState("");
     // const [selectText, setSelectText] = useState("");
     const [translatedText, setTranslatedText] = useState("");
-    // const translation = useTranslation();
+    const translation = useTranslation();
 
     const availableLanguages = [
         { Code: "zh", Display: "Chinese, Simplified (简体中文)" },
@@ -78,7 +78,7 @@ const SideSheetContent=({ handelClose, handelExpand })=>{
         <div style={{ width: '100%', height: '100%' }}>
         <div className="headingController">
             <div className="heading" >
-                Translation
+                {translation.translateValue}
             </div>
             <ExpandAndCrossIcon handelCloseBtn={handelClose} handelExpandBtn={handelExpandBtn} />
         </div>
@@ -91,7 +91,7 @@ const SideSheetContent=({ handelClose, handelExpand })=>{
             }} onChange={(event) => {
                 setSelectLanguage(event.target.value)
             }} >
-                <option key={-1} value="">Select Language</option>
+                <option key={-1} value="">{translation.selectLanguageValue}</option>
                 {
                     availableLanguages.map((each, i) => (
                         <option key={i} value={each.Code} >{each.Display}</option>
