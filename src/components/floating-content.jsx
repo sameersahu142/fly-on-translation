@@ -23,21 +23,18 @@ const FloatingContent = ({ handelClose,item }) => {
     useEffect(() => {
         floatingContentBox.current.classList.remove("textContainerIsShowRtl");
         floatingContentBox.current.classList.remove("textContainerIsShow");
-        // floatingContentBox.current.classList.add("textContainer");
         if (!isMount) {
             if (isRtl && item.isSelect) {
-                // floatingContentBox.current.classList.remove("textContainer");
                 floatingContentBox.current.classList.add("textContainerIsShowRtl");
                 floatingContentBox.current.classList.add("textContainerIsShowRtlBorder");
             } else if (!isRtl && item.isSelect) {
-                // floatingContentBox.current.classList.remove("textContainer");
                 floatingContentBox.current.classList.remove("textContainerIsShowRtlBorder");
                 floatingContentBox.current.classList.add("textContainerIsShow");
             }
         }
     }, [isRtl, item.isSelect])
     return (
-        <div style={{marginTop:'1px' }}  onClick={()=>handelOpen(item)} className="textContainer" ref={floatingContentBox} title={item.text === translation.translateValue ? translation.showTranslationValue : translation.showLiveChatValue}>
+        <div onClick={()=>handelOpen(item)} className="textContainer" ref={floatingContentBox} title={item.text === translation.translateValue ? translation.showTranslationValue : translation.showLiveChatValue}>
             <div className="languageIcon">
                 <FontAwesomeIcon icon={item.icon} size="lg" />
             </div>
