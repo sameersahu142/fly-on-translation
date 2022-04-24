@@ -1,6 +1,6 @@
 .floatingBoxContainer{
     width: 80px;
-    height: 120px;
+    height: 129px;
     background: white;
     /* border: #b7b7b7 1px solid; */
     box-shadow: -2px -2px 4px 2px rgb(0 0 0 / 10%), 0px 3px 4px rgb(0 0 0 / 20%);
@@ -10,7 +10,7 @@
 }
 .floatingBoxContainerRtl{
     width: 80px;
-    height: 120px;
+    height: 129px;
     background: white;
     /* border: #b7b7b7 1px solid; */
     box-shadow: -2px -2px 4px 2px rgb(0 0 0 / 10%), 0px 3px 4px rgb(0 0 0 / 20%);

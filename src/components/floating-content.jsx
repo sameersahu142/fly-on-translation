@@ -23,13 +23,15 @@ const FloatingContent = ({ handelClose,item }) => {
     useEffect(() => {
         floatingContentBox.current.classList.remove("textContainerIsShowRtl");
         floatingContentBox.current.classList.remove("textContainerIsShow");
-        floatingContentBox.current.classList.add("textContainer");
+        // floatingContentBox.current.classList.add("textContainer");
         if (!isMount) {
             if (isRtl && item.isSelect) {
-                floatingContentBox.current.classList.remove("textContainer");
+                // floatingContentBox.current.classList.remove("textContainer");
                 floatingContentBox.current.classList.add("textContainerIsShowRtl");
+                floatingContentBox.current.classList.add("textContainerIsShowRtlBorder");
             } else if (!isRtl && item.isSelect) {
-                floatingContentBox.current.classList.remove("textContainer");
+                // floatingContentBox.current.classList.remove("textContainer");
+                floatingContentBox.current.classList.remove("textContainerIsShowRtlBorder");
                 floatingContentBox.current.classList.add("textContainerIsShow");
             }
         }

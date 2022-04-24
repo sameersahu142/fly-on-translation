@@ -5,25 +5,23 @@
     align-items: center;
     border-bottom-left-radius: 10px;
     background: #ffff;
+    border-right: 3px solid #ffffff00;
+    padding-top: 7px;
 }
 .textContainerIsShow{
-    cursor: pointer;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-    border-bottom-left-radius: 10px;
-    background: #edf2f7;
+    background: #edf2f7 !important;
     border-right: 3px solid #4d95b3;
-}
-.textContainerIsShowRtl{
-    cursor: pointer;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-    border-bottom-right-radius: 10px;
-    background: #edf2f7;
-    border-left: 3px solid #4d95b3;
 }
 .textContainer:hover{
     background: #edf2f7;
+}
+.textContainerIsShowRtlBorder{
+    border-left: 3px solid #ffffff00;
+    border-right: none !important;
+}
+.textContainerIsShowRtl{
+    border-bottom-left-radius:0px !important;
+    background: #edf2f7 !important;
+    border-left: 3px solid #4d95b3;
+    border-bottom-right-radius: 10px;
 }
