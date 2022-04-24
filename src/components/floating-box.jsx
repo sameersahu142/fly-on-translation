@@ -18,7 +18,7 @@ const FloatingBox = ({ handelClose, handelRtlController, handelExpand }) => {
     const { isRtl } = useHideShowContext();
     const { isShow,isChatShow } = useHideShowContext();
     const translation = useTranslation();
-    const floatingData=[{icon:faLanguage,text:translation.translateValue},{icon:faCommentDots,text:translation.liveChatValue}]
+    const floatingData=[{icon:faLanguage,text:translation.translateValue,isSelect:isShow?true:false},{icon:faCommentDots,text:translation.liveChatValue,isSelect:isChatShow?true:false}]
 
     const handelRtl = (value) => {
         handelRtlController(value)
@@ -33,17 +33,17 @@ const FloatingBox = ({ handelClose, handelRtlController, handelExpand }) => {
    
 
     useEffect(() => {
-        if (!isMount) {
-            if (isRtl && (isShow || isChatShow)) {
-                floatingBox.current.classList.remove('textContainerIsShow');
-                floatingBox.current.classList.remove('textContainer');
-                floatingBox.current.classList.add('textContainerIsShowRtl');
-            } else if (!isRtl && (isShow || isChatShow)) {
-                floatingBox.current.classList.remove('textContainerIsShowRtl');
-                floatingBox.current.classList.remove('textContainer');
-                floatingBox.current.classList.add('textContainerIsShow');
-            }
-        }
+        // if (!isMount) {
+        //     if (isRtl && (isShow || isChatShow)) {
+        //         floatingBox.current.classList.remove('textContainerIsShow');
+        //         floatingBox.current.classList.remove('textContainer');
+        //         floatingBox.current.classList.add('textContainerIsShowRtl');
+        //     } else if (!isRtl && (isShow || isChatShow)) {
+        //         floatingBox.current.classList.remove('textContainerIsShowRtl');
+        //         floatingBox.current.classList.remove('textContainer');
+        //         floatingBox.current.classList.add('textContainerIsShow');
+        //     }
+        // }
     }, [isRtl, isShow,isChatShow])
 
     return (
@@ -59,7 +59,7 @@ const FloatingBox = ({ handelClose, handelRtlController, handelExpand }) => {
                                 <FontAwesomeIcon icon={faArrowsAlt} color='#808080' title={translation.dragUpOrDownValue} />
                             </div>
                         </div>
-                        <div className={isShow || isChatShow ? "textContainerIsShow" : "textContainer"} ref={floatingBox} title="Show Translation">
+                        <div ref={floatingBox} title="Show Translation">
                             <div style={{ width: '100%' }}>
                                 {
                                     floatingData.map((item, index) => (

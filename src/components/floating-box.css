@@ -43,7 +43,7 @@
     align-items: center;
     flex-direction: row-reverse;
 }
-.textContainer{
+/* .textContainer{
     cursor: pointer;
     height: auto;
     display: flex;
@@ -75,7 +75,7 @@
 }
 .textContainer:hover{
     background: #edf2f7;
-}
+} */
 .languageIcon{
     display: flex;
     justify-content: center;
