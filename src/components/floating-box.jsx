@@ -39,7 +39,7 @@ const FloatingBox = ({ handelClose, handelRtlController, handelExpand }) => {
                                 <FontAwesomeIcon icon={faArrowsAlt} color='#808080' title={translation.dragUpOrDownValue} />
                             </div>
                         </div>
-                        <div title="Show Translation">
+                        <div>
                             <div style={{ width: '100%' }}>
                                 {
                                     floatingData.map((item, index) => (

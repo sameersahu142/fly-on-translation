@@ -35,7 +35,7 @@ const FloatingContent = ({ handelClose,item }) => {
         }
     }, [isRtl, item.isSelect])
     return (
-        <div style={{marginTop:'1px' }}  onClick={()=>handelOpen(item)} className="textContainer" ref={floatingContentBox}>
+        <div style={{marginTop:'1px' }}  onClick={()=>handelOpen(item)} className="textContainer" ref={floatingContentBox} title={item.text === translation.translateValue ? translation.showTranslationValue : translation.showLiveChatValue}>
             <div className="languageIcon">
                 <FontAwesomeIcon icon={item.icon} size="lg" />
             </div>
