@@ -43,39 +43,6 @@
     align-items: center;
     flex-direction: row-reverse;
 }
-/* .textContainer{
-    cursor: pointer;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-left-radius: 10px;
-    background: #ffff;
-    padding: 5px 10px;
-}
-.textContainerIsShow{
-    cursor: pointer;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-left-radius: 10px;
-    background: #edf2f7;
-    border-right: 3px solid #4d95b3;
-}
-.textContainerIsShowRtl{
-    cursor: pointer;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-right-radius: 10px;
-    background: #edf2f7;
-    border-left: 3px solid #4d95b3;
-}
-.textContainer:hover{
-    background: #edf2f7;
-} */
 .languageIcon{
     display: flex;
     justify-content: center;
