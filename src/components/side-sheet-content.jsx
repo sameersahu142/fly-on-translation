@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import { useLanguageAndSelectTextContext } from "./context/languageAndSelectTextContext";
 import { translateYourSelectedText } from "../end-point";
@@ -14,6 +16,7 @@ const SideSheetContent=({ handelClose, handelExpand })=>{
     // const [selectText, setSelectText] = useState("");
     const [translatedText, setTranslatedText] = useState("");
     const translation = useTranslation();
+    const [isLoading, setIsLoading] = useState(false);
 
     const availableLanguages = [
         { Code: "zh", Display: "Chinese, Simplified (简体中文)" },
@@ -29,14 +32,15 @@ const SideSheetContent=({ handelClose, handelExpand })=>{
         { Code: "ar", Display: "Arabic (العربية)" },
     ];
 
-
     const handelExpandBtn = (value) => {
         handelExpand(value)
     }
 
     const translate = (selectLanguage, selectText) => {
+        setIsLoading(true);
         translateYourSelectedText(selectLanguage, selectText).then((response) => {
             if (response.data.translated_text) {
+                setIsLoading(false);
                 setTranslatedText(response.data.translated_text);
                 // setSelectText("");
                 // setSelectLanguage("")
@@ -100,9 +104,10 @@ const SideSheetContent=({ handelClose, handelExpand })=>{
             </select>
         </div>
         <div className={isExpand ? "translateTextExpandContainer" : "translateTextContainer"}>
-            {translatedText}
+            {isLoading ? <div className="loading"><FontAwesomeIcon icon={faSpinner} className="fa-pulse" size="2xl"/></div> : translatedText}
         </div>
     </div>
     )
 }
+
 export default SideSheetContent;
