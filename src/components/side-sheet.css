@@ -86,3 +86,26 @@
 .translateAreaAuto {
   height: auto;
 }
+
+@media only screen and (max-width: 480px) {
+  .sideSheetContainer {
+    width: 260px;
+    height: auto;
+    background: white;
+    box-shadow: -2px -2px 4px 2px rgb(0 0 0 / 10%), 0px 3px 4px rgb(0 0 0 / 20%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+  }
+  .sideSheetExpandContainer {
+    width: 260px;
+    height: 700px;
+    background: white;
+    box-shadow: -2px -2px 4px 2px rgb(0 0 0 / 10%), 0px 3px 4px rgb(0 0 0 / 20%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+  }
+}
